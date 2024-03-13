@@ -1,0 +1,45 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
+      - name: Type Checking
+        run: pnpm tsc
+      - name: Run Jest Tests
+        id: jest
+        continue-on-error: true
+        run: pnpm test -- --bail --json --outputFile=jest-results.json
+      - name: Comment PR with test results if failure
+        if: failure() && steps.jest.outcome == 'failure'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const testResults = JSON.parse(fs.readFileSync('jest-results.json', 'utf8'));
+            const failedTests = testResults.testResults.filter(result => result.status === 'failed');
+            const commentBody = `
+              ## Test Failures
+              ${failedTests.map(result => `- ${result.name}`).join('\n')}
+            `;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });

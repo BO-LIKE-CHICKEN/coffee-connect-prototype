@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "pre-commit 타입 검사 중..."
+npx tsc --noEmit
+
+echo "lint 검사 중..."
+npx lint-staged

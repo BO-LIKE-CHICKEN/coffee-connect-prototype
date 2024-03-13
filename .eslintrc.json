@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "eslint-plugin-import", "@tanstack/eslint-plugin-query"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "next",
+            "group": "builtin"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin"
+          },
+          {
+            "pattern": "src/**",
+            "group": "internal"
+          }
+        ]
+      }
+    ],
+    "react/no-unused-prop-types": "warn",
+    "no-implicit-coercion": ["error", { "boolean": false }],
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  }
+}
