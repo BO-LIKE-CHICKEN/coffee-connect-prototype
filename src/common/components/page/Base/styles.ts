@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { BREAK_POINT } from '@common/constants/breakpoint';
 
-export const Main = styled.main<{ $height: number }>`
+export const Main = styled(motion.main)<{ $height: number }>`
   display: flex;
 
   flex-direction: column;
