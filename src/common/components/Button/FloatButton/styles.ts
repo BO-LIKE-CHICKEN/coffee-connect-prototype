@@ -9,6 +9,7 @@ export const Container = styled(motion.div)`
 
   width: 100%;
   height: auto;
+  height: 58px;
   padding: 0 20px;
 `;
 
@@ -22,4 +23,10 @@ export const Button = styled(motion.button)`
 
   background-color: ${({ theme }) => theme.primary};
   border-radius: 50px;
+
+  :disabled {
+    opacity: 0.3;
+  }
+
+  transition: 0.5s ease-in-out;
 `;

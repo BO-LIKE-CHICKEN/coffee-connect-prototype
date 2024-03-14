@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Title from '@common/components/Title';
 import Text from '@common/components/Text';
 import FloatButton from '@common/components/Button/FloatButton';
+import { useForm } from '@common/hooks/useForm';
 import Base from '../../Base';
 import * as S from './styles';
 
@@ -36,6 +37,8 @@ const imageVariants = {
 };
 
 const Name = () => {
+  const { name, setName } = useForm();
+
   return (
     <Base>
       <S.Container variants={containerVariants} initial="hidden" animate="visible">
@@ -44,8 +47,9 @@ const Name = () => {
         <S.ImageWrapper variants={imageVariants}>
           <Image src="/images/tv_panel_quiz_man.png" alt="커피잔 놀이기구에 탄 남녀" fill objectFit="contain" />
         </S.ImageWrapper>
-        <FloatButton href="/introduce" type="link">
-          시작하기
+        <S.Input placeholder="홍길동" variants={itemVariants} value={name} onChange={setName} />
+        <FloatButton href="/introduce/interests" type="link" disabled={!(name.length > 0)}>
+          다음
         </FloatButton>
       </S.Container>
     </Base>
