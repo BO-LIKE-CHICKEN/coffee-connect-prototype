@@ -16,6 +16,6 @@ export const ImageWrapper = styled(motion.div)`
   position: relative;
 
   width: 100%;
-  height: 100vw;
+  height: calc(100vw - 40px);
   margin-top: 28px;
 `;
