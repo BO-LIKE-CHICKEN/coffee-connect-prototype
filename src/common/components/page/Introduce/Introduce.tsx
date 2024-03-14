@@ -44,7 +44,7 @@ const Introduce = () => {
         <S.ImageWrapper variants={imageVariants}>
           <Image src="/images/coffee_self_service_woman.png" alt="커피잔 놀이기구에 탄 남녀" fill objectFit="contain" />
         </S.ImageWrapper>
-        <FloatButton href="/introduce" type="link">
+        <FloatButton href="/introduce/name" type="link">
           다음
         </FloatButton>
       </S.Container>
