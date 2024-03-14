@@ -1,5 +1,3 @@
-import Base from '@common/components/page/Base';
+import Home from '@common/components/page/Home';
 
-export default function Home() {
-  return <Base>Hello world!</Base>;
-}
+export default Home;
