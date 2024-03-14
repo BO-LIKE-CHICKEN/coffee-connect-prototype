@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   display: flex;
 
   flex-direction: column;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled(motion.div)`
   position: relative;
 
   width: 100%;
