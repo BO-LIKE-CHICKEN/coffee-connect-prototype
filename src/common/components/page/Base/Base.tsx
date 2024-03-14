@@ -7,7 +7,7 @@ const Base = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <S.Main $height={height}>
-      <S.Container>{children}</S.Container>
+      <S.Container $height={height}>{children}</S.Container>
     </S.Main>
   );
 };

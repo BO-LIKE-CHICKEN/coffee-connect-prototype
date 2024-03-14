@@ -12,7 +12,7 @@ export const Main = styled.main<{ $height: number }>`
   min-height: ${({ $height }) => $height}px;
 `;
 
-export const Container = styled.section`
+export const Container = styled.section<{ $height: number }>`
   display: flex;
 
   flex-direction: column;
@@ -20,7 +20,8 @@ export const Container = styled.section`
   align-items: center;
 
   width: 100%;
-  padding: 0 20px;
+  min-height: ${({ $height }) => $height}px;
+  padding: 60px 20px 20px;
 
   @media screen and (${BREAK_POINT.PC}) {
     max-width: 720px;
