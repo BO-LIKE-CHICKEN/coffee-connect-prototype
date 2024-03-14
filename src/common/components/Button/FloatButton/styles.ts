@@ -17,6 +17,7 @@ export const Button = styled(motion.button)`
   padding: 16px 20px;
 
   font-size: 22px;
+  font-weight: 500;
   color: ${({ theme }) => theme.white};
 
   background-color: ${({ theme }) => theme.primary};
