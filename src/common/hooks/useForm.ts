@@ -6,7 +6,7 @@ import { JOB_GROUP } from '@common/constants/jobGroup';
 export const useForm = () => {
   const [form, setForm] = useRecoilState(formAtom);
 
-  const { name, jobGroup } = form;
+  const { name, jobGroup, content } = form;
 
   const setName: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setForm((prev) => ({ ...prev, name: e.target.value }));
@@ -16,5 +16,9 @@ export const useForm = () => {
     return setForm((prev) => ({ ...prev, jobGroup }));
   };
 
-  return { name, setName, jobGroup, setJobGroup };
+  const setContent: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
+    setForm((prev) => ({ ...prev, content: e.target.value }));
+  };
+
+  return { name, setName, jobGroup, setJobGroup, content, setContent };
 };
