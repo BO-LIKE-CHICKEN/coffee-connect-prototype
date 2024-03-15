@@ -20,5 +20,5 @@ export const useForm = () => {
     setForm((prev) => ({ ...prev, content: e.target.value }));
   };
 
-  return { name, setName, jobGroup, setJobGroup, content, setContent };
+  return { name, setName, jobGroup, setJobGroup, content, setContent, form };
 };
