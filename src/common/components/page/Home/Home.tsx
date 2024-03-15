@@ -3,27 +3,9 @@ import Image from 'next/image';
 import Title from '@common/components/Title';
 import Text from '@common/components/Text';
 import FloatButton from '@common/components/Button/FloatButton';
+import { containerVariants, itemVariants } from '@common/constants';
 import Base from '../Base';
 import * as S from './styles';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 1,
-      duration: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    duration: 0.3,
-  },
-};
 
 const imageVariants = {
   hidden: { opacity: 0 },

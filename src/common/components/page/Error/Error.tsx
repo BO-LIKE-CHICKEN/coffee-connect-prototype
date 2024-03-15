@@ -2,29 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import Title from '@common/components/Title';
 import Text from '@common/components/Text';
+import { containerVariants, itemVariants } from '@common/constants';
 import Base from '../Base';
 import * as S from './styles';
 
 type Props = { title: string; description?: string };
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 1,
-      duration: 0.5,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    duration: 0.5,
-  },
-};
 
 const imageVariants = {
   hidden: { opacity: 0 },
