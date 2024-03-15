@@ -24,8 +24,8 @@ const Name = () => {
   return (
     <Base>
       <S.Container variants={CONTAINER_VARIANTS} initial="hidden" animate="visible">
-        <Title variants={ITEM_VARIANTS}>당신의 이름을 알려주세요</Title>
-        <Text variants={ITEM_VARIANTS}>혹시 다른 호칭으로 불러드리는게 좋을까요?</Text>
+        <Title variants={ITEM_VARIANTS}>제 이름을 알려드릴게요</Title>
+        <Text variants={ITEM_VARIANTS}>이름이 아닌 닉네임으로 불러주셔도 좋아요</Text>
         <S.ImageWrapper variants={imageVariants}>
           <Image src="/images/tv_panel_quiz_man.png" alt="커피잔 놀이기구에 탄 남녀" fill objectFit="contain" />
         </S.ImageWrapper>
