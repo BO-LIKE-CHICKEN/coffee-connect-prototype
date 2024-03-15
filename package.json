@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "husky install",
     "test": "jest",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "pnpm run build && pnpm run export",
+    "deploy": "gh-pages -d out"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
