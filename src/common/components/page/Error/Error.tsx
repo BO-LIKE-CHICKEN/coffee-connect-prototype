@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Title from '@common/components/Title';
 import Text from '@common/components/Text';
-import { containerVariants, itemVariants } from '@common/constants';
+import { CONTAINER_VARIANTS, ITEM_VARIANTS } from '@common/constants';
 import Base from '../Base';
 import * as S from './styles';
 
@@ -27,10 +27,10 @@ const imageVariants = {
 const Error = ({ title, description }: Props) => {
   return (
     <Base>
-      <S.Container variants={containerVariants} initial="hidden" animate="visible">
-        <Title variants={itemVariants}>{title}</Title>
+      <S.Container variants={CONTAINER_VARIANTS} initial="hidden" animate="visible">
+        <Title variants={ITEM_VARIANTS}>{title}</Title>
         {description && (
-          <Text variants={itemVariants} $color="lightGray">
+          <Text variants={ITEM_VARIANTS} $color="lightGray">
             {description}
           </Text>
         )}

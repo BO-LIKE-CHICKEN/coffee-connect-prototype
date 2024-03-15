@@ -4,7 +4,7 @@ import Title from '@common/components/Title';
 import Text from '@common/components/Text';
 import FloatButton from '@common/components/Button/FloatButton';
 import { useForm } from '@common/hooks/useForm';
-import { containerVariants, itemVariants } from '@common/constants';
+import { CONTAINER_VARIANTS, ITEM_VARIANTS } from '@common/constants';
 import Base from '../../Base';
 import * as S from './styles';
 
@@ -23,14 +23,14 @@ const Name = () => {
 
   return (
     <Base>
-      <S.Container variants={containerVariants} initial="hidden" animate="visible">
-        <Title variants={itemVariants}>당신의 이름을 알려주세요</Title>
-        <Text variants={itemVariants}>혹시 다른 호칭으로 불러드리는게 좋을까요?</Text>
+      <S.Container variants={CONTAINER_VARIANTS} initial="hidden" animate="visible">
+        <Title variants={ITEM_VARIANTS}>당신의 이름을 알려주세요</Title>
+        <Text variants={ITEM_VARIANTS}>혹시 다른 호칭으로 불러드리는게 좋을까요?</Text>
         <S.ImageWrapper variants={imageVariants}>
           <Image src="/images/tv_panel_quiz_man.png" alt="커피잔 놀이기구에 탄 남녀" fill objectFit="contain" />
         </S.ImageWrapper>
-        <S.Input placeholder="홍길동" variants={itemVariants} value={name} onChange={setName} />
-        <FloatButton href="/introduce/interests" type="link" disabled={!(name.length > 0)}>
+        <S.Input placeholder="홍길동" variants={ITEM_VARIANTS} value={name} onChange={setName} />
+        <FloatButton href="/introduce/job-group" type="link" disabled={!(name.length > 0)}>
           다음
         </FloatButton>
       </S.Container>
