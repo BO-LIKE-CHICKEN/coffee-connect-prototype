@@ -13,6 +13,8 @@ export const globalStyles = css`
     font-family: ${pretendard.style.fontFamily}, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
       'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol', sans-serif;
+
+    -webkit-tab-highlight-color: rgb(0 0 0 / 0%);
   }
 
   body {
@@ -55,5 +57,9 @@ export const globalStyles = css`
 
   input: {
     box-shadow: none;
+  }
+
+  input:focus {
+    outline: none;
   }
 `;
