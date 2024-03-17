@@ -19,7 +19,7 @@ const Complete = ({ currentDomain }: Props) => {
 
   const queryString = params.toString(); // "name=John%20Doe&age=30"
 
-  const url = `${currentDomain}/complete?${queryString}`;
+  const url = `${currentDomain}/hello?${queryString}`;
 
   return (
     <Base>
