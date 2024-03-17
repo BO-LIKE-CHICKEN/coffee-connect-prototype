@@ -3,14 +3,14 @@ import Head from 'next/head';
 import { useHeight } from '@common/hooks';
 import * as S from './styles';
 
+const pageTransition = {
+  initial: { opacity: 0, y: 200 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -200 },
+};
+
 const Base = ({ children }: { children: React.ReactNode }) => {
   const height = useHeight();
-
-  const pageTransition = {
-    initial: { opacity: 0, y: 200 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -200 },
-  };
 
   return (
     <>
@@ -24,7 +24,7 @@ const Base = ({ children }: { children: React.ReactNode }) => {
         animate="animate"
         exit="exit"
         variants={pageTransition}
-        transition={{ duration: 1, ease: 'easeInOut' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
         <S.Container $height={height}>{children}</S.Container>
       </S.Main>
